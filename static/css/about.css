@@ -436,29 +436,31 @@ ul{
 
 .custom-navbar{
 
-    background:rgba(255,255,255,.75);
+    background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(18px);
 
     -webkit-backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(255,255,255,.3);
+    border-bottom:1px solid rgba(226,232,240,.7);
 
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    padding:15px 0;
 
-    transition:.4s;
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
 
-    padding:16px 0;
+    z-index:1000;
 
 }
 
 .navbar-brand{
 
-    font-size:1.8rem;
+    color:var(--primary)!important;
+
+    font-size:1.65rem;
 
     font-weight:700;
 
-    color:var(--primary)!important;
+    letter-spacing:-.5px;
 
 }
 
@@ -470,27 +472,59 @@ ul{
 
 }
 
-.nav-link{
+.custom-navbar .nav-link{
+
+    color:var(--text)!important;
+
+    font-size:14px;
 
     font-weight:600;
 
-    margin-left:18px;
+    padding:10px 14px!important;
 
-    color:var(--text)!important;
+    margin-left:5px;
+
+    border-radius:10px;
 
     transition:var(--transition);
 
 }
+.custom-navbar .nav-link i{
 
-.nav-link:hover{
+    margin-right:6px;
+
+    color:var(--primary);
+
+}
+.custom-navbar .nav-link:hover{
+
+       background:var(--light-blue);
 
     color:var(--primary)!important;
 
 }
 
-.nav-link.active{
+.custom-navbar .nav-link.active{
 
-    color:var(--primary)!important;
+        background:linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+    color:white!important;
+
+    box-shadow:0 8px 20px rgba(79,70,229,.2);
+
+}
+
+.custom-navbar .nav-link.active i{
+
+    color:white;
 
 }
 
@@ -1758,5 +1792,221 @@ border-radius:20px;
 ::-webkit-scrollbar-thumb:hover{
 
 background:var(--primary);
+
+}
+
+/* =========================================================
+   PROFILE MODAL
+========================================================= */
+
+#profileModal .modal-content {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+#profileModal .modal-header {
+    padding: 22px 25px;
+    border-bottom: 1px solid #eef1f6;
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #ffffff
+    );
+}
+
+
+#profileModal .modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+
+#profileModal .modal-title i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eaf3ff;
+    color: #2563eb;
+
+    font-size: 18px;
+}
+
+
+/* CLOSE BUTTON */
+
+#profileModal .btn-close {
+    opacity: 0.6;
+    transition: 0.3s ease;
+}
+
+
+#profileModal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+#profileModal .modal-body {
+    padding: 25px;
+}
+
+
+/* PROFILE ITEM */
+
+#profileModal .profile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #f0f2f5;
+}
+
+
+#profileModal .profile-item:last-child {
+    border-bottom: none;
+}
+
+
+/* LABEL */
+
+#profileModal .profile-item strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+
+/* VALUE */
+
+#profileModal .profile-item p {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #1e293b;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+#profileModal .modal-footer {
+    padding: 18px 25px;
+
+    border-top: 1px solid #eef1f6;
+
+    background: #fafbfc;
+}
+
+
+/* CLOSE BUTTON */
+
+#profileModal .modal-footer .btn-secondary {
+    border: none;
+
+    padding: 10px 25px;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+#profileModal .modal-footer .btn-secondary:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+.modal-backdrop.show {
+    opacity: 0.65;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    #profileModal .modal-dialog {
+        margin: 15px;
+    }
+
+
+    #profileModal .modal-content {
+        border-radius: 16px;
+    }
+
+
+    #profileModal .modal-header {
+        padding: 18px 20px;
+    }
+
+
+    #profileModal .modal-body {
+        padding: 20px;
+    }
+
+
+    #profileModal .profile-item {
+        display: block;
+    }
+
+
+    #profileModal .profile-item strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    #profileModal .profile-item p {
+        text-align: left;
+    }
+
+
+    #profileModal .modal-footer {
+        padding: 15px 20px;
+    }
 
 }

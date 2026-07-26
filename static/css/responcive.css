@@ -215,3 +215,53 @@
     font-size: 16px;
   }
 }
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    #profileModal .modal-dialog {
+        margin: 15px;
+    }
+
+
+    #profileModal .modal-content {
+        border-radius: 16px;
+    }
+
+
+    #profileModal .modal-header {
+        padding: 18px 20px;
+    }
+
+
+    #profileModal .modal-body {
+        padding: 20px;
+    }
+
+
+    #profileModal .profile-item {
+        display: block;
+    }
+
+
+    #profileModal .profile-item strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    #profileModal .profile-item p {
+        text-align: left;
+    }
+
+
+    #profileModal .modal-footer {
+        padding: 15px 20px;
+    }
+
+}

@@ -164,7 +164,7 @@ href="{% static 'css/contact.css' %}">
 
                         <i class="fa-solid fa-circle-user"></i>
 
-                        Nomaan
+                        {{ userinfo.name }}
 
 
                     </a>
@@ -175,15 +175,17 @@ href="{% static 'css/contact.css' %}">
 
                         <li>
 
-                            <a
-                                class="dropdown-item"
-                                href="profile.html">
+                           <a
+    class="dropdown-item"
+    href="#"
+    data-bs-toggle="modal"
+    data-bs-target="#profileModal">
 
-                                <i class="fa-solid fa-user"></i>
+    <i class="fa-solid fa-user"></i>
 
-                                My Profile
+    My Profile
 
-                            </a>
+</a>
 
                         </li>
 
@@ -192,7 +194,7 @@ href="{% static 'css/contact.css' %}">
 
                             <a
                                 class="dropdown-item"
-                                href="downloads.html">
+                                href="#">
 
                                 <i class="fa-solid fa-download"></i>
 
@@ -207,7 +209,7 @@ href="{% static 'css/contact.css' %}">
 
                             <a
                                 class="dropdown-item"
-                                href="saved.html">
+                                href="#">
 
                                 <i class="fa-solid fa-star"></i>
 
@@ -254,7 +256,132 @@ href="{% static 'css/contact.css' %}">
 
 </nav>
 
+<!-- PROFILE MODAL -->
 
+<div
+    class="modal fade"
+    id="profileModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+
+            <!-- HEADER -->
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <!-- BODY -->
+
+            <div class="modal-body">
+
+                <div class="profile-item">
+
+                    <strong>
+                        Full Name
+                    </strong>
+
+                    <p>
+                        {{ userinfo.name }}
+                    </p>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <p>
+                        {{ userinfo.email }}
+                    </p>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <strong>
+                        Roll Number
+                    </strong>
+
+                    <p>
+                        {{ userinfo.roll_no }}
+                    </p>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <strong>
+                        Branch
+                    </strong>
+
+                    <p>
+                        {{ userinfo.branch }}
+                    </p>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <strong>
+                        Semester
+                    </strong>
+
+                    <p>
+                        {{ userinfo.semester }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Close
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
 
 
 

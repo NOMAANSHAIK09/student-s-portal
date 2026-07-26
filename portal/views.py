@@ -68,16 +68,28 @@ def logout(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    user_id = request.session.get('user_id')
+    if not user_id:
+            return redirect('login')
+        
+    userinfo = UserInfo.objects.get(id=user_id)
+         
+    return render(request, 'about.html',{'userinfo': userinfo})
 
 def contact(request):
-    return render(request, 'contact.html')
+    user_id = request.session.get('user_id')
+    if not user_id:
+        return redirect('login')
+            
+    userinfo = UserInfo.objects.get(id=user_id)
+    return render(request, 'contact.html',{'userinfo': userinfo})
 
 def exampaper(request):
     
     user_id = request.session.get('user_id')
     if not user_id:
         return redirect('login')
+    userinfo = UserInfo.objects.get(id=user_id)
 
     subject = request.GET.get('subject', '').strip()
     branch = request.GET.get('branch', '').strip()
@@ -114,6 +126,7 @@ def exampaper(request):
     return render(request, 'exampaper.html', {
         'papers': papers,
         'latest_papers': latest_papers,
+        'userinfo': userinfo
     })
     
     
