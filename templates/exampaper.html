@@ -391,167 +391,117 @@ or exam type.
 
 
 
-<div class="row g-3">
+<form method="GET">
 
+    <div class="row g-3">
 
+        <!-- Search Subject -->
+        <div class="col-lg-4">
 
-<!-- Search -->
+            <div class="search-box">
 
-<div class="col-lg-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-<div class="search-box">
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Search Subject..."
+                    value="{{ request.GET.subject|default:'' }}"
+                >
 
-<i class="fa-solid fa-magnifying-glass"></i>
+            </div>
 
-<input
+        </div>
 
-type="text"
 
-placeholder="Search Subject...">
+        <!-- Branch -->
+        <div class="col-lg-2">
 
-</div>
+            <select class="form-select" name="branch">
 
-</div>
+                <option value="">Branch</option>
 
+                <option value="CSE">CSE</option>
 
+                <option value="AIML">AIML</option>
 
-<!-- Branch -->
+                <option value="AI&DS">AI&DS</option>
 
-<div class="col-lg-2">
+                <option value="ECE">ECE</option>
 
-<select class="form-select">
+                <option value="EEE">EEE</option>
 
-<option selected>
+                <option value="MECH">MECH</option>
 
-Branch
+            </select>
 
-</option>
+        </div>
 
-<option>
 
-CSE
+        <!-- Semester -->
+        <div class="col-lg-2">
 
-</option>
+            <select class="form-select" name="semester">
 
-<option>
+                <option value="">Semester</option>
 
-AI & DS
+                <option value="1">I</option>
 
-</option>
+                <option value="2">II</option>
 
-<option>
+                <option value="3">III</option>
 
-ECE
+                <option value="4">IV</option>
 
-</option>
+                <option value="5">V</option>
 
-<option>
+                <option value="6">VI</option>
 
-EEE
+                <option value="7">VII</option>
 
-</option>
+                <option value="8">VIII</option>
 
-<option>
+            </select>
 
-MECH
+        </div>
 
-</option>
 
-</select>
+        <!-- Year -->
+        <div class="col-lg-2">
 
-</div>
+            <select class="form-select" name="year">
 
+                <option value="">Year</option>
 
+                <option value="2026">2026</option>
 
-<!-- Semester -->
+                <option value="2025">2025</option>
 
-<div class="col-lg-2">
+                <option value="2024">2024</option>
 
-<select class="form-select">
+                <option value="2023">2023</option>
 
-<option selected>
+            </select>
 
-Semester
+        </div>
 
-</option>
 
-<option>I</option>
+        <!-- Search Button -->
+        <div class="col-lg-2 d-grid">
 
-<option>II</option>
+            <button
+                type="submit"
+                class="btn search-btn">
 
-<option>III</option>
+                Search
 
-<option>IV</option>
+            </button>
 
-<option>V</option>
+        </div>
 
-<option>VI</option>
+    </div>
 
-<option>VII</option>
-
-<option>VIII</option>
-
-</select>
-
-</div>
-
-
-
-<!-- Year -->
-
-<div class="col-lg-2">
-
-<select class="form-select">
-
-<option selected>
-
-Year
-
-</option>
-
-<option>
-
-2025
-
-</option>
-
-<option>
-
-2024
-
-</option>
-
-<option>
-
-2023
-
-</option>
-
-<option>
-
-2022
-
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- Search Button -->
-
-<div class="col-lg-2 d-grid">
-
-<button class="btn search-btn">
-
-Search
-
-</button>
-
-</div>
-
-</div>
+</form>
 
 
 
@@ -622,13 +572,12 @@ Computer Networks
 
 </section>
 
-
 <!-- =======================================
-            LATEST PAPERS
+            SEARCH RESULTS
 ======================================== -->
+<section class="search-results">
 
-<section class="latest-paper">
-
+{% if request.GET.subject or request.GET.branch or request.GET.semester or request.GET.year %}
 <div class="container">
 
 <div class="section-title text-center">
@@ -644,22 +593,7 @@ Latest Uploads
 Recently Added Papers
 
 </h2>
-
-<p>
-
-Download the latest uploaded examination papers.
-
-</p>
-
-</div>
-
-
-
 <div class="row g-4">
-
-
-
-<!-- CARD 1 -->
 {% for paper in papers %}
 <div class="col-lg-4">
 
@@ -710,9 +644,122 @@ Preview
 
 </a>
 
-<!-- <a href="{{ paper.pdf.url }}" target="_blank">
-            View PDF
-</a> -->
+<a href="{{ paper.pdf.url }}" download class="btn download-btn">
+    Download
+</a>
+
+</div>
+
+</div>
+
+</div>
+{% empty %}
+
+   <center><p>No question papers available.</p></center> 
+
+{% endfor %}
+
+{% endif %}
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+
+<!-- =======================================
+            LATEST PAPERS
+======================================== -->
+
+<section class="latest-paper">
+
+<div class="container">
+
+<div class="section-title text-center">
+
+<span class="section-tag">
+
+Latest Uploads
+
+</span>
+
+<h2>
+
+Recently Added Papers
+
+</h2>
+
+<p>
+
+Download the latest uploaded examination papers.
+
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+
+<!-- CARD 1 -->
+{% for paper in latest_papers %}
+<div class="col-lg-4">
+
+<div class="paper-card">
+
+<div class="paper-icon">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<h4>
+
+{{ paper.subject }}
+
+</h4>
+
+<div class="paper-info">
+
+<p>
+
+{{ paper.department }}
+
+</p>
+
+<p>
+
+{{ paper.semester }}
+
+</p>
+
+<p>
+
+{{ paper.exam_year }}
+
+</p>
+
+</div>
+
+<div class="paper-buttons">
+
+<a href="{{ paper.pdf.url }}" target="_blank"
+
+class="btn preview-btn">
+
+Preview
+
+
+</a>
+
+<a href="{{ paper.pdf.url }}" download class="btn download-btn">
+    Download
+</a>
 
 </div>
 
@@ -863,6 +910,8 @@ Download
 </div>
 
 </section>
+
+
 
 <!-- =======================================
             STATISTICS

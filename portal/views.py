@@ -74,9 +74,43 @@ def contact(request):
     return render(request, 'contact.html')
 
 def exampaper(request):
+
+    subject = request.GET.get('subject', '').strip()
+    branch = request.GET.get('branch', '').strip()
+    semester = request.GET.get('semester', '').strip()
+    year = request.GET.get('year', '').strip()
+
+    # All papers
     papers = QuestionPaper.objects.all()
-    
-    return render(request, 'exampaper.html', {'papers': papers})
+
+    # Apply filters
+    if subject:
+        papers = papers.filter(
+            subject__icontains=subject
+        )
+
+    if branch:
+        papers = papers.filter(
+            department__iexact=branch
+        )
+
+    if semester:
+        papers = papers.filter(
+            semester=semester
+        )
+
+    if year:
+        papers = papers.filter(
+            exam_year=year
+        )
+
+    # Latest uploads
+    latest_papers = QuestionPaper.objects.all().order_by('-id')[:6]
+
+    return render(request, 'exampaper.html', {
+        'papers': papers,
+        'latest_papers': latest_papers,
+    })
     
     
 
