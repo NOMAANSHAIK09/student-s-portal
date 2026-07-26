@@ -74,6 +74,10 @@ def contact(request):
     return render(request, 'contact.html')
 
 def exampaper(request):
+    
+    user_id = request.session.get('user_id')
+    if not user_id:
+        return redirect('login')
 
     subject = request.GET.get('subject', '').strip()
     branch = request.GET.get('branch', '').strip()
