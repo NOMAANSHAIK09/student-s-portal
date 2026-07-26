@@ -177,7 +177,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="profile.html">
+                                href="#">
 
                                 <i class="fa-solid fa-user"></i>
 
@@ -192,7 +192,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="downloads.html">
+                                href="#">
 
                                 <i class="fa-solid fa-download"></i>
 
@@ -207,7 +207,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="saved.html">
+                                href="#">
 
                                 <i class="fa-solid fa-star"></i>
 
@@ -227,7 +227,7 @@
 
                             <a
                                 class="dropdown-item logout-item"
-                                href="{% url 'login' %}">
+                                href="{% url 'logout' %}">
 
                                 <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -622,6 +622,248 @@ Computer Networks
 
 </section>
 
+
+<!-- =======================================
+            LATEST PAPERS
+======================================== -->
+
+<section class="latest-paper">
+
+<div class="container">
+
+<div class="section-title text-center">
+
+<span class="section-tag">
+
+Latest Uploads
+
+</span>
+
+<h2>
+
+Recently Added Papers
+
+</h2>
+
+<p>
+
+Download the latest uploaded examination papers.
+
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+
+<!-- CARD 1 -->
+{% for paper in papers %}
+<div class="col-lg-4">
+
+<div class="paper-card">
+
+<div class="paper-icon">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<h4>
+
+{{ paper.subject }}
+
+</h4>
+
+<div class="paper-info">
+
+<p>
+
+{{ paper.department }}
+
+</p>
+
+<p>
+
+{{ paper.semester }}
+
+</p>
+
+<p>
+
+{{ paper.exam_year }}
+
+</p>
+
+</div>
+
+<div class="paper-buttons">
+
+<a href="{{ paper.pdf.url }}" target="_blank"
+
+class="btn preview-btn">
+
+Preview
+
+
+</a>
+
+<!-- <a href="{{ paper.pdf.url }}" target="_blank">
+            View PDF
+</a> -->
+
+</div>
+
+</div>
+
+</div>
+{% empty %}
+
+    <p>No question papers available.</p>
+
+{% endfor %}
+
+
+<!-- CARD 2 -->
+
+<!-- <div class="col-lg-4">
+
+<div class="paper-card">
+
+<div class="paper-icon">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<h4>
+
+Python Programming
+
+</h4>
+
+<div class="paper-info">
+
+<p>
+
+Semester : III
+
+</p>
+
+<p>
+
+Year : 2024
+
+</p>
+
+<p>
+
+Exam : Semester
+
+</p>
+
+</div>
+
+<div class="paper-buttons">
+
+<a href="#"
+
+class="btn preview-btn">
+
+Preview
+
+</a>
+
+<a href="#"
+
+class="btn download-btn">
+
+Download
+
+</a>
+
+</div>
+
+</div>
+
+</div> -->
+
+
+
+<!-- CARD 3 -->
+
+<!-- <div class="col-lg-4">
+
+<div class="paper-card">
+
+<div class="paper-icon">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<h4>
+
+Database Management
+
+</h4>
+
+<div class="paper-info">
+
+<p>
+
+Semester : IV
+
+</p>
+
+<p>
+
+Year : 2023
+
+</p>
+
+<p>
+
+Exam : Final
+
+</p>
+
+</div>
+
+<div class="paper-buttons">
+
+<a href="#"
+
+class="btn preview-btn">
+
+Preview
+
+</a>
+
+<a href="#"
+
+class="btn download-btn">
+
+Download
+
+</a>
+
+</div>
+
+</div>
+
+</div> -->
+
+
+
+</div>
+
+</div>
+
+</section>
+
 <!-- =======================================
             STATISTICS
 ======================================== -->
@@ -812,245 +1054,7 @@ Choose your subject and start downloading papers.
 
 
 
-<!-- =======================================
-            LATEST PAPERS
-======================================== -->
 
-<section class="latest-paper">
-
-<div class="container">
-
-<div class="section-title text-center">
-
-<span class="section-tag">
-
-Latest Uploads
-
-</span>
-
-<h2>
-
-Recently Added Papers
-
-</h2>
-
-<p>
-
-Download the latest uploaded examination papers.
-
-</p>
-
-</div>
-
-
-
-<div class="row g-4">
-
-
-
-<!-- CARD 1 -->
-
-<div class="col-lg-4">
-
-<div class="paper-card">
-
-<div class="paper-icon">
-
-<i class="fa-solid fa-file-pdf"></i>
-
-</div>
-
-<h4>
-
-Data Structures
-
-</h4>
-
-<div class="paper-info">
-
-<p>
-
-Semester : IV
-
-</p>
-
-<p>
-
-Year : 2025
-
-</p>
-
-<p>
-
-Exam : Mid-2
-
-</p>
-
-</div>
-
-<div class="paper-buttons">
-
-<a href="#"
-
-class="btn preview-btn">
-
-Preview
-
-</a>
-
-<a href="#"
-
-class="btn download-btn">
-
-Download
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- CARD 2 -->
-
-<div class="col-lg-4">
-
-<div class="paper-card">
-
-<div class="paper-icon">
-
-<i class="fa-solid fa-file-pdf"></i>
-
-</div>
-
-<h4>
-
-Python Programming
-
-</h4>
-
-<div class="paper-info">
-
-<p>
-
-Semester : III
-
-</p>
-
-<p>
-
-Year : 2024
-
-</p>
-
-<p>
-
-Exam : Semester
-
-</p>
-
-</div>
-
-<div class="paper-buttons">
-
-<a href="#"
-
-class="btn preview-btn">
-
-Preview
-
-</a>
-
-<a href="#"
-
-class="btn download-btn">
-
-Download
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- CARD 3 -->
-
-<div class="col-lg-4">
-
-<div class="paper-card">
-
-<div class="paper-icon">
-
-<i class="fa-solid fa-file-pdf"></i>
-
-</div>
-
-<h4>
-
-Database Management
-
-</h4>
-
-<div class="paper-info">
-
-<p>
-
-Semester : IV
-
-</p>
-
-<p>
-
-Year : 2023
-
-</p>
-
-<p>
-
-Exam : Final
-
-</p>
-
-</div>
-
-<div class="paper-buttons">
-
-<a href="#"
-
-class="btn preview-btn">
-
-Preview
-
-</a>
-
-<a href="#"
-
-class="btn download-btn">
-
-Download
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-</div>
-
-</section>
 
 
 

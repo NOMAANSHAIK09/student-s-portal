@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import UserInfo
+from .models import UserInfo, QuestionPaper
 # Create your views here.
 # from django.http import HttpResponse
 
@@ -74,8 +74,11 @@ def contact(request):
     return render(request, 'contact.html')
 
 def exampaper(request):
-    return render(request, 'exampaper.html')
-
+    papers = QuestionPaper.objects.all()
+    
+    return render(request, 'exampaper.html', {'papers': papers})
+    
+    
 
         
     # return render(request, 'dashboard.html')
