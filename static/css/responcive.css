@@ -1,0 +1,217 @@
+/* =================== RESPONSIVE FIXES =================== */
+
+/* Navbar: make it stack properly on small screens */
+@media (max-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid #eee;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding: 12px 15px;
+    text-align: center;
+    display: block;
+  }
+  .navbar-brand.hr {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+/* Hero section responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 15px;
+    min-height: auto;
+  }
+  .hero-section h1 {
+    font-size: 32px;
+  }
+  .hero-section p {
+    font-size: 16px;
+  }
+  .hero-section .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Stats Section responsive */
+@media (max-width: 768px) {
+  .stats .col-md-3 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .stats h4 {
+    font-size: 16px;
+  }
+}
+
+/* Fourth Section responsive */
+@media (max-width: 768px) {
+  .fourth h1 {
+    font-size: 28px;
+  }
+  .fourth p {
+    font-size: 16px;
+  }
+  .fourth .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .hero-section h1,
+  .fourth h1 {
+    font-size: 22px;
+  }
+  .hero-section p,
+  .fourth p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wr > h1 {
+    font-size: 26px;
+  }
+  .wr > p {
+    font-size: 14px;
+  }
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+  .icon-circle i {
+    font-size: 22px;
+  }
+
+  /* Stack boxes vertically */
+  .baats .bb {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+  }
+  .features .fb {
+    width: 100%;
+    margin: 10px auto;
+    display: block;
+  }
+  .features-box .fb {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .baats{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+/* 📱 Tablets (≥577px and ≤992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .wr > h1 {
+    font-size: 34px;
+  }
+  .wr > p {
+    font-size: 18px;
+  }
+
+  /* 2 in a row layout */
+  .baats .bb {
+    width: 45%;
+    margin: 2%;
+    display: inline-block;
+  }
+  .features .fb {
+    width: 45%;
+    margin: 2%;
+    display: inline-block;
+  }
+  .features-box .fb {
+    width: 45%;
+    margin: 2%;
+    display: inline-block;
+  }
+  .baats>.bb{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+}
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .col-md-7, .col-md-2 {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/* for contact page */
+/* 📱 Mobile & Tablets Responsiveness */
+@media (max-width: 991px) {
+  .row {
+    flex-direction: column;     /* Stack blocks vertically */
+    align-items: center;
+  }
+
+  .contact-block, 
+  .details {
+    flex: 1 1 100%;             /* Take full width */
+    max-width: 100%;
+  }
+
+  .details {
+    margin-top: 20px;           /* Space below form */
+  }
+
+  .faq-section {
+    max-width: 100%;            /* FAQ also full width */
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact > h1 {
+    font-size: 28px;            /* Smaller heading */
+  }
+
+  .contact > p {
+    font-size: 16px;
+  }
+
+  .contact-header h2 {
+    font-size: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;            /* Adjust input text */
+    padding: 10px 12px;
+  }
+
+  .btn-send {
+    width: 100%;                /* Full-width button on mobile */
+    font-size: 15px;
+  }
+
+  .faq-section h2 {
+    font-size: 22px;
+  }
+
+  .faq-item h4 {
+    font-size: 16px;
+  }
+}

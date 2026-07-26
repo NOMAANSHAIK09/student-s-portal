@@ -1,0 +1,1071 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Student Portal</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+</head>
+
+<body>
+
+<!-- ===========================
+        NAVBAR
+=========================== -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+
+
+    <div class="container">
+
+
+        <!-- LOGO -->
+
+        <a class="navbar-brand"
+           href="{% url 'dashboard' %}">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Student Portal
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#dashboardNavbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="dashboardNavbar">
+
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+                <!-- DASHBOARD -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="{% url 'dashboard' %}">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <!-- SEARCH PAPERS -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'exampaper' %}">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        Search Papers
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'about' %}">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'contact' %}">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- PROFILE -->
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link profile-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown">
+
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        Nomaan
+
+
+                    </a>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+
+                        <li>
+
+                            <a
+                                class="dropdown-item"
+                                href="profile.html">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                My Profile
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a
+                                class="dropdown-item"
+                                href="downloads.html">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                My Downloads
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a
+                                class="dropdown-item"
+                                href="saved.html">
+
+                                <i class="fa-solid fa-star"></i>
+
+                                Saved Papers
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+
+                        <li>
+
+                            <a
+                                class="dropdown-item logout-item"
+                                href="{% url 'login' %}">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+    </div>
+</nav>
+
+
+
+<!-- ===========================
+        HERO SECTION
+=========================== -->
+
+<section class="about-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-badge">
+
+                    About Student Portal
+
+                </span>
+
+                <h1>
+
+                    Empowering Students Through
+
+                    <span>Technology</span>
+
+                </h1>
+
+                <p>
+
+                    Student Portal is a modern educational platform
+                    designed to provide previous year question papers,
+                    study notes, syllabus, and useful academic
+                    resources in one place.
+
+                    Our mission is to help every student prepare
+                    smarter, save time, and perform better in exams.
+
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#" class="btn hero-btn">
+
+                        Explore Papers
+
+                    </a>
+
+                    <a href="#" class="btn btn-outline-light ms-3">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'images/about.png' %}"
+
+                    class="img-fluid hero-image rounded-circle shadow-lg"
+                    alt="About Student Portal">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ===========================
+        OUR STORY
+=========================== -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <img src="{% static 'images/about2.png' %}"
+          
+                    class="img-fluid rounded-4 shadow-lg"
+                    alt="About">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <span class="section-tag">
+
+                    OUR STORY
+
+                </span>
+
+                <h2>
+
+                    Built By Students,
+
+                    <span>For Students.</span>
+
+                </h2>
+
+                <p>
+
+                    We understand how difficult it can be for students
+                    to find reliable previous year question papers,
+                    study materials, and notes before examinations.
+
+                    Student Portal was created with a simple goal—
+
+                    make educational resources available anytime,
+                    anywhere.
+
+                </p>
+
+                <p>
+
+                    Instead of searching through multiple WhatsApp
+                    groups, Google Drive folders, or asking seniors,
+                    students can access everything from one
+                    organized platform.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ===========================
+        MISSION & VISION
+=========================== -->
+
+<section class="mission-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+
+                OUR PURPOSE
+
+            </span>
+
+            <h2>
+
+                Mission & Vision
+
+            </h2>
+
+            <p>
+
+                Everything we build is focused on helping students
+                achieve academic success.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+            <!-- Mission -->
+
+            <div class="col-lg-6">
+
+                <div class="mission-card">
+
+                    <div class="icon-box">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Our Mission
+
+                    </h3>
+
+                    <p>
+
+                        To simplify education by providing free and
+                        organized academic resources that help
+                        students prepare effectively and save valuable
+                        time.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Vision -->
+
+            <div class="col-lg-6">
+
+                <div class="mission-card">
+
+                    <div class="icon-box">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Our Vision
+
+                    </h3>
+
+                    <p>
+
+                        To become the most trusted digital platform
+                        where students can learn, collaborate,
+                        and access quality educational resources
+                        anytime.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+            STATISTICS SECTION
+========================================== -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <h2>500+</h2>
+
+                    <p>Question Papers</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h2>300+</h2>
+
+                    <p>Study Notes</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>1500+</h2>
+
+                    <p>Students</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <h2>20+</h2>
+
+                    <p>Departments</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+            WHY CHOOSE US
+========================================== -->
+
+<section class="why-us">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+
+                WHY CHOOSE US
+
+            </span>
+
+            <h2>
+
+                Everything A Student Needs
+
+            </h2>
+
+            <p>
+
+                Designed to make your learning journey simple,
+                organized and stress free.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h4>Previous Year Papers</h4>
+
+                    <p>
+
+                        Quickly access previous examination papers
+                        for all semesters.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <h4>Study Notes</h4>
+
+                    <p>
+
+                        Well organized notes prepared by students
+                        and faculty.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    <h4>Easy Downloads</h4>
+
+                    <p>
+
+                        Download PDFs instantly without any
+                        complicated process.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <h4>Quick Search</h4>
+
+                    <p>
+
+                        Search papers by subject,
+                        semester or branch.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    <h4>Responsive Design</h4>
+
+                    <p>
+
+                        Access the portal smoothly
+                        from any device.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <h4>Secure Platform</h4>
+
+                    <p>
+
+                        Safe authentication and
+                        protected user data.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+            HOW IT WORKS
+========================================== -->
+
+<section class="process-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+
+                HOW IT WORKS
+
+            </span>
+
+            <h2>
+
+                Get Started In Three Easy Steps
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="process-card">
+
+                    <div class="number">
+
+                        01
+
+                    </div>
+
+                    <h4>
+
+                        Register
+
+                    </h4>
+
+                    <p>
+
+                        Create your free account
+                        within seconds.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4">
+
+                <div class="process-card">
+
+                    <div class="number">
+
+                        02
+
+                    </div>
+
+                    <h4>
+
+                        Search Resources
+
+                    </h4>
+
+                    <p>
+
+                        Find notes and previous year
+                        papers easily.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4">
+
+                <div class="process-card">
+
+                    <div class="number">
+
+                        03
+
+                    </div>
+
+                    <h4>
+
+                        Download & Learn
+
+                    </h4>
+
+                    <p>
+
+                        Download instantly and start
+                        preparing smarter.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+            CALL TO ACTION
+========================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2>
+
+                        Ready To Start Your Learning Journey?
+
+                    </h2>
+
+                    <p>
+
+                        Join thousands of students who use Student Portal
+                        to access previous year question papers,
+                        study notes, and academic resources.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+
+                    <a href="{% url 'exampaper' %}" class="btn cta-btn">
+
+                        Explore Papers
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+                FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row gy-5">
+
+            <!-- Logo -->
+
+            <div class="col-lg-4">
+
+                <h3>
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    Student Portal
+
+                </h3>
+
+                <p>
+
+                    Student Portal is a one-stop platform designed
+                    to help students access previous year question
+                    papers, study notes, syllabus, and other
+                    academic resources anytime, anywhere.
+
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="#"><i class="fab fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+
+                    Quick Links
+
+                </h5>
+
+                <ul>
+
+                    <li><a href="{% url 'dashboard' %}">Home</a></li>
+
+                    <li><a href="{% url 'about' %}">About</a></li>
+
+                    <li><a href="{% url 'exampaper' %}">Question Papers</a></li>
+
+                    <!-- <li><a href="">Notes</a></li> -->
+
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Resources -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5>
+
+                    Resources
+
+                </h5>
+
+                <ul>
+
+                    <li><a href="#">Previous Papers</a></li>
+
+                    <li><a href="#">Study Notes</a></li>
+
+                    <li><a href="#">Syllabus</a></li>
+
+                    <li><a href="#">Important Questions</a></li>
+
+                    <li><a href="#">Downloads</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div class="col-lg-3">
+
+                <h5>
+
+                    Contact
+
+                </h5>
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    support@studentportal.com
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +91 918826482
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Hyderabad, Telangana
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="copyright text-center">
+
+            © 2026 Student Portal.
+
+            All Rights Reserved.
+
+            Designed with ❤️ for Students.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+            BOOTSTRAP JS
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,691 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up | Student Portal</title>
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="{% static 'css/auth.css' %}">
+
+</head>
+
+<body>
+
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand"
+href="{% url 'index' %}">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Student Portal
+
+</a>
+
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+id="navbar">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link"
+href="#">
+
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link"
+href="#">
+
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link"
+href="#">
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link"
+href="#">
+
+</a>
+</li>
+
+</ul>
+
+<a
+href="{% url 'login' %}"
+class="btn login-btn ms-lg-4">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+
+
+<!-- ================= SIGNUP ================= -->
+
+<section class="login-section">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<div class="login-card">
+
+<div class="login-header">
+
+<h2>
+
+Create Account 🎓
+
+</h2>
+
+<p>
+
+Join Student Portal and get instant access to question papers,
+notes,
+resources,
+and much more.
+
+</p>
+
+</div>
+
+<form method="POST">
+{% csrf_token %}
+<div class="mb-3">
+
+<label class="form-label">
+
+Full Name
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="fa-solid fa-user"></i>
+
+</span>
+
+<input
+type="text"
+class="form-control"
+name="name"
+placeholder="Enter full name">
+
+</div>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Email
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="fa-solid fa-envelope"></i>
+
+</span>
+
+<input
+type="email"
+class="form-control"
+name="email"
+placeholder="Enter email">
+
+</div>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Roll Number
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="fa-solid fa-id-card"></i>
+
+</span>
+
+<input
+type="text"
+class="form-control"
+name="roll_no"
+placeholder="College Roll Number">
+
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>
+
+Branch
+
+</label>
+
+<select class="form-select" name="branch">
+
+<option selected disabled>
+
+Select Branch
+
+</option>
+
+<option>AIML</option>
+
+<option>AI&DS</option>
+
+<option>CSE</option>
+
+<option>ECE</option>
+
+<option>EEE</option>
+
+<option>MECH</option>
+
+<option>CIVIL</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>
+
+Semester
+
+</label>
+
+<select class="form-select" name="semester">
+
+<option selected disabled>
+
+Select Semester
+
+</option>
+
+<option>1</option>
+
+<option>2</option>
+
+<option>3</option>
+
+<option>4</option>
+
+<option>5</option>
+
+<option>6</option>
+
+<option>7</option>
+
+<option>8</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label>
+
+Password
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="fa-solid fa-lock"></i>
+
+</span>
+
+<input
+id="password"
+type="password"
+name="password"
+class="form-control"
+placeholder="Create password">
+
+<button
+class="btn password-btn"
+type="button">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label>
+
+Confirm Password
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="fa-solid fa-lock"></i>
+
+</span>
+
+<input
+type="password"
+class="form-control"
+placeholder="Confirm password">
+
+</div>
+
+</div>
+
+
+
+<div class="form-check mb-4">
+
+<input
+class="form-check-input"
+type="checkbox">
+
+<label class="form-check-label">
+
+I agree to the
+Terms &
+Conditions
+
+</label>
+
+</div>
+
+
+
+<button
+class="btn auth-btn w-100">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Create Account
+
+</button>
+
+
+
+<hr class="my-4">
+
+<div class="text-center">
+
+Already have an account?
+
+<a
+class="signup-link"
+href="{% url 'login' %}">
+
+Login Here
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- ================= RIGHT SIDE ================= -->
+
+<div class="col-lg-6">
+
+<div class="login-banner">
+
+<img
+src="{% static 'images/signup.png' %}"
+class="img-fluid rounded-circle"
+alt="Signup Illustration">
+
+<div class="banner-content">
+
+<span class="badge-title">
+
+Join Our Community
+
+</span>
+
+<h2>
+
+Start Your Academic
+Journey Today
+
+</h2>
+
+<p>
+
+Create your free Student Portal account and
+access previous year question papers,
+important notes,
+study resources,
+and much more from one place.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="login-features">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<h4>
+
+1000+ Question Papers
+
+</h4>
+
+<p>
+
+Download previous year papers
+organized by branch,
+semester,
+and subject.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<h4>
+
+Study Materials
+
+</h4>
+
+<p>
+
+Access notes,
+important questions,
+syllabus,
+and exam preparation resources.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h4>
+
+Student Community
+
+</h4>
+
+<p>
+
+Connect with students,
+share resources,
+and stay updated with academic announcements.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h3>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Student Portal
+
+</h3>
+
+<p>
+
+Helping students succeed through easy access to
+question papers,
+notes,
+and learning resources.
+
+</p>
+
+</div>
+
+
+
+<div class="col-lg-6 text-lg-end">
+
+<div class="social-icons">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+</div>
+
+<p class="copyright">
+
+© 2026 Student Portal. All Rights Reserved.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-top">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- Password Show / Hide -->
+
+<script>
+
+const password=document.getElementById("password");
+
+const toggle=document.querySelector(".password-btn");
+
+toggle.addEventListener("click",()=>{
+
+if(password.type==="password"){
+
+password.type="text";
+
+toggle.innerHTML='<i class="fa-solid fa-eye-slash"></i>';
+
+}
+
+else{
+
+password.type="password";
+
+toggle.innerHTML='<i class="fa-solid fa-eye"></i>';
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
