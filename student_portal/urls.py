@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 # from django.contrib import admin
 # from django.urls import path
-from portal.views import dashboard, exampaper, login, about, index, signup, contact
+from portal.views import dashboard, exampaper, login, about, index, signup, contact, logout
 
 
 urlpatterns = [
@@ -30,7 +30,8 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('contact/', contact, name='contact'),
     path('exampaper/', exampaper, name='exampaper'),
-    path('dashboard/', dashboard, name='dashboard'),    
+    path('dashboard/', dashboard, name='dashboard'), 
+    path('logout/', logout, name='logout'),  # Add this line for logout functionality
 
 ]
 

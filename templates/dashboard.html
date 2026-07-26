@@ -169,7 +169,7 @@
 
                         <i class="fa-solid fa-circle-user"></i>
 
-                        Nomaan
+                        {{ userinfo.name }}
 
 
                     </a>
@@ -182,7 +182,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="profile.html">
+                                href="#">
 
                                 <i class="fa-solid fa-user"></i>
 
@@ -197,7 +197,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="downloads.html">
+                                href="#">
 
                                 <i class="fa-solid fa-download"></i>
 
@@ -212,7 +212,7 @@
 
                             <a
                                 class="dropdown-item"
-                                href="saved.html">
+                                href="#">
 
                                 <i class="fa-solid fa-star"></i>
 
@@ -232,7 +232,7 @@
 
                             <a
                                 class="dropdown-item logout-item"
-                                href="{% url 'login' %}">
+                                href="{% url 'logout' %}">
 
                                 <i class="fa-solid fa-right-from-bracket"></i>
 
