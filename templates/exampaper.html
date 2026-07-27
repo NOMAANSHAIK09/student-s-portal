@@ -88,7 +88,7 @@
                 <li class="nav-item">
 
                     <a
-                        class="nav-link active"
+                        class="nav-link "
                         href="{% url 'dashboard' %}">
 
                         <i class="fa-solid fa-house"></i>
@@ -102,10 +102,10 @@
 
                 <!-- SEARCH PAPERS -->
 
-                <li class="nav-item">
+                <li class="nav-item ">
 
                     <a
-                        class="nav-link"
+                        class="nav-link active"
                         href="{% url 'exampaper' %}">
 
                         <i class="fa-solid fa-file-lines"></i>
@@ -153,7 +153,7 @@
 
                 <!-- PROFILE -->
 
-                <li class="nav-item dropdown">
+                  <li class="nav-item dropdown">
 
                     <a
                         class="nav-link profile-link dropdown-toggle"
@@ -175,17 +175,17 @@
 
                         <li>
 
-                           <a
-                            class="dropdown-item"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#profileModal">
+                        <a
+                        class="dropdown-item"
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#profileModal">
 
-                            <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-user"></i>
 
-                            My Profile
+                        My Profile
 
-                        </a>
+                    </a>
 
                         </li>
 
@@ -711,13 +711,13 @@ Computer Networks
 
 <span class="section-tag">
 
-Latest Uploads
+Results
 
 </span>
 
 <h2>
 
-Recently Added Papers
+Search Papers Result 
 
 </h2>
 <div class="row g-4">
@@ -782,7 +782,7 @@ Preview
 </div>
 {% empty %}
 
-   <center><p>No question papers available.</p></center> 
+   <center><h4>No question papers available.</h4></center> 
 
 {% endfor %}
 
@@ -895,7 +895,7 @@ Preview
 </div>
 {% empty %}
 
-    <p>No question papers available.</p>
+    <center><h4>No question papers available.</h4></center>
 
 {% endfor %}
 

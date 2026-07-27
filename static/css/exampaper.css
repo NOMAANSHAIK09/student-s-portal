@@ -1,399 +1,43 @@
+
+/*==================================================
+            DASHBOARD CSS - PART 1
+==================================================*/
+
+
 /*==================================================
                 ROOT VARIABLES
 ==================================================*/
 
-/* :root{
+:root{
 
     --primary:#4F46E5;
     --primary-dark:#4338CA;
+
     --secondary:#06B6D4;
 
-    --success:#22C55E;
-    --danger:#EF4444;
-    --warning:#F59E0B;
-
-    --bg:#F8FAFC;
     --white:#ffffff;
 
+    --bg:#F8FAFC;
+
+    --light-blue:#EEF2FF;
+
     --text:#1E293B;
+
     --gray:#64748B;
 
-    --shadow:0 15px 35px rgba(0,0,0,.08);
+    --border:#E2E8F0;
 
-    --radius:20px;
+    --shadow:0 20px 45px rgba(0,0,0,.08);
 
     --transition:.35s ease;
 
-} */
-:root {
-    --primary: #4F46E5;        /* Main Indigo */
-    --primary-dark: #4338CA;   /* Dark Indigo */
-    --secondary: #06B6D4;      /* Cyan */
-    
-    --white: #FFFFFF;
-    --bg: #F8FAFC;             /* Main background */
-    --light-blue: #EEF2FF;     /* Light indigo */
-    
-    --text: #1E293B;           /* Main text */
-    --gray: #64748B;           /* Secondary text */
-    --border: #E2E8F0;         /* Borders */
-    
-    --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-    
-    --transition: 0.35s ease;
-}
-/* extra */
-/* =========================================
-   USER PROFILE DROPDOWN
-========================================= */
-
-.user-profile-wrapper {
-    position: relative;
-    margin-left: 15px;
 }
 
 
-/* User Button */
 
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 
-    padding: 10px 15px;
-
-    color: #1E293B;
-
-    font-size: 16px;
-    font-weight: 600;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.user-profile:hover {
-    background: #EEF2FF;
-    color: #4F46E5;
-}
-
-
-/* User Icon */
-
-.user-profile > i:first-child {
-    color: #4F46E5;
-    font-size: 22px;
-}
-
-
-/* Arrow */
-
-.user-profile .dropdown-arrow {
-    font-size: 11px;
-    color: #1E293B;
-
-    transition: transform 0.3s ease;
-}
-
-
-/* =========================================
-   DROPDOWN MENU
-========================================= */
-
-.profile-dropdown {
-    position: absolute;
-
-    top: calc(100% + 12px);
-
-    right: 0;
-
-    width: 265px;
-
-    padding: 12px;
-
-    background: #FFFFFF;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(15, 23, 42, 0.12);
-
-    border: 1px solid #F1F5F9;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-10px);
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-
-    z-index: 1000;
-}
-
-
-/* Show Dropdown */
-
-.user-profile-wrapper:hover .profile-dropdown {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transform: translateY(0);
-
-}
-
-
-/* =========================================
-   DROPDOWN ITEMS
-========================================= */
-
-.profile-dropdown a {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 14px 16px;
-
-    color: #1E293B;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: 500;
-
-    border-radius: 12px;
-
-    transition: all 0.25s ease;
-}
-
-
-.profile-dropdown a:hover {
-
-    background: #EEF2FF;
-
-    color: #4F46E5;
-
-}
-
-
-/* Dropdown Icons */
-
-.profile-dropdown a i {
-
-    width: 22px;
-
-    text-align: center;
-
-    color: #4F46E5;
-
-    font-size: 18px;
-}
-
-
-/* =========================================
-   DIVIDER
-========================================= */
-
-.profile-dropdown .dropdown-divider {
-
-    height: 1px;
-
-    margin: 8px 5px;
-
-    background: #E2E8F0;
-}
-
-
-/* =========================================
-   LOGOUT
-========================================= */
-
-.profile-dropdown .logout-link {
-
-    color: #EF4444;
-}
-
-
-.profile-dropdown .logout-link i {
-
-    color: #EF4444;
-}
-
-
-.profile-dropdown .logout-link:hover {
-
-    background: #FEF2F2;
-
-    color: #DC2626;
-
-}
-/* =========================================
-   LOGGED-IN NAVBAR
-========================================= */
-
-.custom-navbar {
-    background: #ffffff;
-    padding: 18px 0;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-}
-
-.custom-navbar .navbar-brand {
-    color: #4F46E5;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.custom-navbar .navbar-brand i {
-    color: #06B6D4;
-    margin-right: 10px;
-}
-
-.custom-navbar .nav-link {
-    color: #1E293B;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 12px 18px !important;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.custom-navbar .nav-link:hover {
-    color: #4F46E5;
-    background: #EEF2FF;
-}
-
-.custom-navbar .nav-link.active {
-    color: #4F46E5;
-    background: #EEF2FF;
-}
-
-
-/* Dashboard Active Button */
-
-.dashboard-link {
-    color: #ffffff !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #4F46E5,
-            #06B6D4
-        );
-
-    box-shadow:
-        0 10px 25px
-        rgba(79, 70, 229, 0.20);
-
-    padding: 12px 20px !important;
-}
-
-.dashboard-link:hover {
-    color: #ffffff !important;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 15px 30px
-        rgba(79, 70, 229, 0.30);
-}
-
-
-/* Navbar Icons */
-
-.custom-navbar .nav-link i {
-    margin-right: 8px;
-    color: #4F46E5;
-}
-
-.custom-navbar .dashboard-link i {
-    color: #ffffff;
-}
-
-
-/* User Profile */
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-left: 20px;
-
-    padding: 10px 15px;
-
-    color: #1E293B;
-
-    font-weight: 600;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.user-profile:hover {
-    background: #EEF2FF;
-    color: #4F46E5;
-}
-
-.user-profile i {
-    color: #4F46E5;
-    font-size: 20px;
-}
-
-.user-profile .fa-chevron-down {
-    font-size: 11px;
-}
-
-
-/* Mobile */
-
-@media (max-width: 991px) {
-
-    .custom-navbar .navbar-collapse {
-        margin-top: 15px;
-        padding: 15px;
-
-        background: #ffffff;
-
-        border-radius: 15px;
-
-        box-shadow:
-            0 15px 35px
-            rgba(0, 0, 0, 0.08);
-    }
-
-    .custom-navbar .nav-link {
-        margin: 4px 0;
-    }
-
-    .dashboard-link {
-        display: inline-block;
-        margin-bottom: 5px;
-    }
-
-    .user-profile {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-}
 /*==================================================
-                RESET
+                    RESET
 ==================================================*/
 
 *{
@@ -406,11 +50,13 @@
 
 }
 
+
 html{
 
     scroll-behavior:smooth;
 
 }
+
 
 body{
 
@@ -424,11 +70,13 @@ body{
 
 }
 
-section{
 
-    padding:100px 0;
+a{
+
+    text-decoration:none;
 
 }
+
 
 img{
 
@@ -438,96 +86,97 @@ img{
 
 }
 
-a{
 
-    text-decoration:none;
+section{
 
-}
-
-ul{
-
-    list-style:none;
+    padding:100px 0;
 
 }
-
-
-
 /*==================================================
-                NAVBAR
+                    NAVBAR
 ==================================================*/
 
 .custom-navbar{
 
-    background:rgba(255,255,255,.92);
+    background: rgba(255,255,255,.92);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter: blur(18px);
 
-    -webkit-backdrop-filter:blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border-bottom:1px solid rgba(226,232,240,.7);
+    border-bottom: 1px solid rgba(226,232,240,.7);
 
-    padding:15px 0;
+    padding: 15px 0;
 
-    box-shadow:0 8px 30px rgba(0,0,0,.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
 
-    z-index:1000;
-}
-
-.navbar-brand{
-
-    color:var(--primary)!important;
-
-    font-size:1.65rem;
-
-    font-weight:700;
-
-    letter-spacing:-.5px;
+    z-index: 1000;
 
 }
 
-.navbar-brand i{
 
-    color:var(--secondary);
+.custom-navbar .navbar-brand {
 
-    margin-right:10px;
+    color: var(--primary)!important;
 
-}
+    font-size: 1.65rem;
 
-.custom-navbar .nav-link{
+    font-weight: 700;
 
-    color:var(--text)!important;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    padding:10px 14px!important;
-
-    margin-left:5px;
-
-    border-radius:10px;
-
-    transition:var(--transition);
-
-}
-.dashboard-navbar .nav-link i{
-
-    margin-right:6px;
-
-    color:var(--primary);
-
-}
-.custom-navbar .nav-link:hover{
-
-    background:var(--light-blue);
-
-    color:var(--primary)!important;
+    letter-spacing: -.5px;
 
 }
 
-.custom-navbar .nav-link.active{
 
-        background:linear-gradient(
+.custom-navbar .navbar-brand i {
+
+    color: var(--secondary);
+
+    margin-right: 8px;
+
+}
+
+
+.custom-navbar .nav-link {
+
+    color: var(--text)!important;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 10px 14px!important;
+
+    margin-left: 5px;
+
+    border-radius: 10px;
+
+    transition: var(--transition);
+
+}
+
+
+.custom-navbar .nav-link i {
+
+    margin-right: 6px;
+
+    color: var(--primary);
+
+}
+
+
+.custom-navbar .nav-link:hover {
+
+    background: var(--light-blue);
+
+    color: var(--primary)!important;
+
+}
+
+
+.custom-navbar .nav-link.active {
+
+    background: linear-gradient(
 
         135deg,
 
@@ -537,47 +186,100 @@ ul{
 
     );
 
-    color:white!important;
+    color: white!important;
 
-    box-shadow:0 8px 20px rgba(79,70,229,.2);
-
-}
-.custom-navbar .nav-link.active i{
-
-    color:white;
-
-}
-.login-btn{
-
-    background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-    );
-
-    color:white;
-
-    border-radius:50px;
-
-    padding:12px 30px;
-
-    font-weight:600;
-
-    transition:var(--transition);
-
-}
-
-.login-btn:hover{
-
-    color:white;
-
-    transform:translateY(-4px);
-
-    box-shadow:0 20px 35px rgba(79,70,229,.3);
+    box-shadow: 0 8px 20px rgba(79,70,229,.2);
 
 }
 
 
+.custom-navbar .nav-link.active i {
+
+    color: white;
+
+}
+
+
+/*==================================================
+                PROFILE DROPDOWN extra
+==================================================*/
+
+.custom-navbar.profile-link{
+
+    margin-left:12px!important;
+
+}
+
+
+.custom-navbar .profile-link i{
+
+    font-size:18px;
+
+}
+
+
+.custom-navbar .dropdown-menu{
+
+    margin-top:15px!important;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:10px;
+
+    min-width:210px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+.custom-navbar .dropdown-item{
+
+    padding:11px 14px;
+
+    border-radius:9px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+
+.custom-navbar .dropdown-item i{
+
+    width:22px;
+
+    color:var(--primary);
+
+}
+
+
+.custom-navbar .dropdown-item:hover{
+
+    background:var(--light-blue);
+
+    color:var(--primary);
+
+}
+
+
+.custom-navbar .logout-item{
+
+    color:#DC2626!important;
+
+}
+
+
+.custom-navbar .logout-item i{
+
+    color:#DC2626!important;
+
+}
 
 /*==================================================
                 HERO SECTION

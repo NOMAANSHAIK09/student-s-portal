@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import make_password, check_password
 
 from .models import UserInfo, QuestionPaper
 # Create your views here.
@@ -25,7 +26,7 @@ def signup(request):
             roll_no=roll_no,
             branch=branch,
             semester=semester,
-            password=password
+            password=make_password(password)
         )
         user.save()
         
@@ -42,7 +43,7 @@ def login(request):
         password=request.POST.get('password')
         try:
             user = UserInfo.objects.get(email=email)
-            if user.password == password:
+            if check_password(password, user.password):
                 request.session['user_id'] = user.id
                 return redirect('dashboard')
                 # return render(request, 'dashboard.html' )
