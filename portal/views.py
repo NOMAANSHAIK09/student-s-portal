@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.hashers import make_password, check_password
+from django.http import HttpResponse
 
 from .models import UserInfo, QuestionPaper
 # Create your views here.
@@ -135,3 +136,37 @@ def exampaper(request):
         
     # return render(request, 'dashboard.html')
 
+
+def download_paper(request, paper_id):
+
+    # Check login
+    user_id = request.session.get('user_id')
+
+    if not user_id:
+        return redirect('login')
+
+    # Get question paper
+    paper = get_object_or_404(
+        QuestionPaper,
+        id=paper_id
+    )
+
+    # Download PDF from Supabase
+    file_data = paper.pdf.storage.download(
+        paper.pdf.name
+    )
+
+    # Create response
+    response = HttpResponse(
+        file_data,
+        content_type='application/pdf'
+    )
+
+    # Force browser download
+    filename = paper.pdf.name.split('/')[-1]
+
+    response['Content-Disposition'] = (
+        f'attachment; filename="{filename}"'
+    )
+
+    return response

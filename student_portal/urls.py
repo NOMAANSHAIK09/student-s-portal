@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 # from django.contrib import admin
 # from django.urls import path
-from portal.views import dashboard, exampaper, login, about, index, signup, contact, logout
+from portal.views import download_paper, dashboard, exampaper, login, about, index, signup, contact, logout
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -34,6 +34,7 @@ urlpatterns = [
     path('exampaper/', exampaper, name='exampaper'),
     path('dashboard/', dashboard, name='dashboard'), 
     path('logout/', logout, name='logout'),  # Add this line for logout functionality
+    path('download-paper/<int:paper_id>/', download_paper,name='download_paper'),
 
 ]
 
