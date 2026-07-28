@@ -1,0 +1,1190 @@
+/*==================================================
+                GOOGLE FONT
+==================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/*==================================================
+                ROOT VARIABLES
+==================================================*/
+
+/* :root{
+
+    --primary:#4F46E5;
+    --primary-dark:#4338CA;
+    --secondary:#06B6D4;
+
+    --white:#ffffff;
+    --bg:#F8FAFC;
+
+    --text:#1E293B;
+    --gray:#64748B;
+
+    --shadow:0 20px 40px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+    --transition:.35s ease;
+
+} */
+:root {
+    --primary: #4F46E5;        /* Main Indigo */
+    --primary-dark: #4338CA;   /* Dark Indigo */
+    --secondary: #06B6D4;      /* Cyan */
+    
+    --white: #FFFFFF;
+    --bg: #F8FAFC;             /* Main background */
+    --light-blue: #EEF2FF;     /* Light indigo */
+    
+    --text: #1E293B;           /* Main text */
+    --gray: #64748B;           /* Secondary text */
+    --border: #E2E8F0;         /* Borders */
+    
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    
+    --transition: 0.35s ease;
+}
+/* extra */
+/* =========================================
+   USER PROFILE DROPDOWN
+========================================= */
+
+.user-profile-wrapper {
+    position: relative;
+    margin-left: 15px;
+}
+
+
+/* User Button */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 15px;
+
+    color: #1E293B;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+
+/* User Icon */
+
+.user-profile > i:first-child {
+    color: #4F46E5;
+    font-size: 22px;
+}
+
+
+/* Arrow */
+
+.user-profile .dropdown-arrow {
+    font-size: 11px;
+    color: #1E293B;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    right: 0;
+
+    width: 265px;
+
+    padding: 12px;
+
+    background: #FFFFFF;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.12);
+
+    border: 1px solid #F1F5F9;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 1000;
+}
+
+
+/* Show Dropdown */
+
+.user-profile-wrapper:hover .profile-dropdown {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   DROPDOWN ITEMS
+========================================= */
+
+.profile-dropdown a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 16px;
+
+    color: #1E293B;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    border-radius: 12px;
+
+    transition: all 0.25s ease;
+}
+
+
+.profile-dropdown a:hover {
+
+    background: #EEF2FF;
+
+    color: #4F46E5;
+
+}
+
+
+/* Dropdown Icons */
+
+.profile-dropdown a i {
+
+    width: 22px;
+
+    text-align: center;
+
+    color: #4F46E5;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.profile-dropdown .dropdown-divider {
+
+    height: 1px;
+
+    margin: 8px 5px;
+
+    background: #E2E8F0;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.profile-dropdown .logout-link {
+
+    color: #EF4444;
+}
+
+
+.profile-dropdown .logout-link i {
+
+    color: #EF4444;
+}
+
+
+.profile-dropdown .logout-link:hover {
+
+    background: #FEF2F2;
+
+    color: #DC2626;
+
+}
+
+.custom-navbar {
+    background: #ffffff;
+    padding: 18px 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+    color: #4F46E5;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.custom-navbar .navbar-brand i {
+    color: #06B6D4;
+    margin-right: 10px;
+}
+
+.custom-navbar .nav-link {
+    color: #1E293B;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 18px !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #4F46E5;
+    background: #EEF2FF;
+}
+
+.custom-navbar .nav-link.active {
+    color: #4F46E5;
+    background: #EEF2FF;
+}
+
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+section{
+
+    padding:100px 0;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/*==================================================
+                    NAVBAR
+==================================================*/
+
+.custom-navbar{
+
+    background:rgba(255,255,255,.90);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.4);
+
+    padding:16px 0;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.navbar-brand{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:var(--primary)!important;
+
+}
+
+.navbar-brand i{
+
+    color:var(--secondary);
+
+    margin-right:10px;
+
+}
+
+.nav-link{
+
+    color:var(--text)!important;
+
+    margin-left:20px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.nav-link:hover{
+
+    color:var(--primary)!important;
+
+}
+
+.login-btn{
+
+    background:linear-gradient(135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:white;
+
+    border-radius:50px;
+
+    padding:12px 30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+
+/*==================================================
+                LOGIN SECTION
+==================================================*/
+
+.login-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    #EEF2FF,
+    #E0F7FA
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.login-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(79,70,229,.08);
+
+    top:-180px;
+
+    left:-180px;
+
+}
+
+.login-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(6,182,212,.10);
+
+    right:-150px;
+
+    bottom:-150px;
+
+}
+
+
+/*==================================================
+                LOGIN CARD
+==================================================*/
+
+.login-card{
+
+    position:relative;
+
+    z-index:2;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.login-header h2{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.login-header p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+/*==================================================
+                    FORM
+==================================================*/
+
+.form-label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.input-group{
+
+    box-shadow:none;
+
+}
+
+.input-group-text{
+
+    background:white;
+
+    border-radius:15px 0 0 15px;
+
+    border:1px solid #dbe4ef;
+
+    border-right:none;
+
+    color:var(--primary);
+
+}
+
+.form-control{
+
+    border-radius:0 15px 15px 0;
+
+    border:1px solid #dbe4ef;
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.10);
+
+    border-color:var(--primary);
+
+}
+
+.password-btn{
+
+    border:1px solid #dbe4ef;
+
+    border-left:none;
+
+    border-radius:0 15px 15px 0;
+
+    background:white;
+
+    color:var(--gray);
+
+}
+
+.password-btn:hover{
+
+    color:var(--primary);
+
+}
+
+.form-check-input:checked{
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+}
+
+.forgot-link{
+
+    color:var(--primary);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.signup-link{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+                LOGIN BUTTON
+==================================================*/
+
+.auth-btn{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:white;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.auth-btn:hover{
+
+    color:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(79,70,229,.25);
+
+}
+
+
+/*==================================================
+                RIGHT BANNER
+==================================================*/
+
+.login-banner{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.login-banner img{
+
+    width:85%;
+
+    margin:auto;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.banner-content{
+
+    margin-top:35px;
+
+}
+
+.badge-title{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:rgba(79,70,229,.12);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.banner-content h2{
+
+    font-size:2.6rem;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.banner-content p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+
+/*==================================================
+                FLOAT ANIMATION
+==================================================*/
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+/*==================================================
+                FEATURES SECTION
+==================================================*/
+
+.login-features{
+
+    padding:90px 0;
+
+    background:#ffffff;
+
+}
+
+.feature-box{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    height:100%;
+
+    border:1px solid rgba(79,70,229,.08);
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.feature-icon{
+
+    width:85px;
+
+    height:85px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:white;
+
+    font-size:30px;
+
+    transition:.35s;
+
+}
+
+.feature-box:hover .feature-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+.feature-box h4{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.feature-box p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+.footer{
+
+    background:#0F172A;
+
+    color:#CBD5E1;
+
+    padding:70px 0 25px;
+
+}
+
+.footer h3{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.footer h3 i{
+
+    color:var(--secondary);
+
+    margin-right:10px;
+
+}
+
+.footer p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+}
+
+.copyright{
+
+    margin-top:15px;
+
+    color:#94A3B8;
+
+}
+
+
+
+/*==================================================
+                SOCIAL ICONS
+==================================================*/
+
+.social-icons{
+
+    margin-top:20px;
+
+}
+
+.social-icons a{
+
+    width:46px;
+
+    height:46px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-left:10px;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    transition:all .35s ease;
+
+}
+
+.social-icons a:hover{
+
+    background:linear-gradient(135deg,
+    var(--primary),
+    var(--secondary));
+
+    transform:translateY(-6px);
+
+}
+
+
+
+/*==================================================
+                BACK TO TOP
+==================================================*/
+
+.back-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    box-shadow:0 18px 35px rgba(79,70,229,.30);
+
+    transition:.35s;
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.login-section{
+
+padding-top:140px;
+
+padding-bottom:70px;
+
+text-align:center;
+
+}
+
+.login-card{
+
+margin-bottom:50px;
+
+}
+
+.login-banner img{
+
+width:70%;
+
+}
+
+.banner-content h2{
+
+font-size:2.2rem;
+
+}
+
+.footer{
+
+text-align:center;
+
+}
+
+.social-icons{
+
+margin-top:25px;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.login-header h2{
+
+font-size:2rem;
+
+}
+
+.banner-content h2{
+
+font-size:2rem;
+
+}
+
+.banner-content p{
+
+font-size:15px;
+
+}
+
+.login-card{
+
+padding:35px;
+
+}
+
+.feature-box{
+
+padding:35px 25px;
+
+}
+
+.auth-btn{
+
+width:100%;
+
+}
+
+}
+
+
+
+@media(max-width:576px){
+
+.navbar-brand{
+
+font-size:1.5rem;
+
+}
+
+.login-card{
+
+padding:25px;
+
+}
+
+.login-banner img{
+
+width:90%;
+
+}
+
+.login-header h2{
+
+font-size:1.8rem;
+
+}
+
+.banner-content h2{
+
+font-size:1.7rem;
+
+}
+
+.feature-box{
+
+padding:28px 20px;
+
+}
+
+.feature-icon{
+
+width:70px;
+
+height:70px;
+
+font-size:26px;
+
+}
+
+.footer h3{
+
+font-size:24px;
+
+}
+
+.social-icons a{
+
+margin:5px;
+
+}
+
+.back-top{
+
+width:48px;
+
+height:48px;
+
+font-size:18px;
+
+}
+
+}
+
+
+
+/*==================================================
+                CUSTOM SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#EEF2FF;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+var(--primary),
+var(--secondary)
+);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary);
+
+}
