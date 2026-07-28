@@ -1,9 +1,10 @@
 import os
 
 from django.core.files.storage import Storage
+from django.utils.deconstruct import deconstructible
 from supabase import create_client
 
-
+@deconstructible
 class SupabaseStorage(Storage):
 
    
