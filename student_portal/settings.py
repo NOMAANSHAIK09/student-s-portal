@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-!p&g3%63p^wvp*$_3_8qdg6*r@f_&9x5!0l$u4xrzq*+!oi&&$
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
-    "your-app-name.onrender.com",
+    "https://student-s-portal-1bnk.onrender.com/",
 ]
 
 
