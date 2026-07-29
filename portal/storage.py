@@ -33,22 +33,26 @@ class SupabaseStorage(Storage):
 
 
     def _save(self, name, content):
+        try:
 
-        file_data = content.read()
+            file_data = content.read()
 
-        self.supabase.storage.from_(
-            self.bucket_name
-        ).upload(
-            path=name,
-            file=file_data,
-            file_options={
-                "content-type": "application/pdf",
-                "upsert": True
-            }
-        )
-        
+            self.supabase.storage.from_(
+                self.bucket_name
+            ).upload(
+                path=name,
+                file=file_data,
+                file_options={
+                    "content-type": "application/pdf",
+                    "upsert": "true"
+                }
+            )
+            
 
-        return name
+            return name
+        except Exception as e:
+            print("UPLOAD ERROR:", repr(e))
+            raise
 
 
     def exists(self, name):

@@ -28,6 +28,7 @@ SECRET_KEY = "django-insecure-!p&g3%63p^wvp*$_3_8qdg6*r@f_&9x5!0l$u4xrzq*+!oi&&$
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = "True"
 
 ALLOWED_HOSTS = [
     "student-s-portal-1bnk.onrender.com",
@@ -50,13 +51,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
 ]
 
 ROOT_URLCONF = "student_portal.urls"
@@ -83,16 +85,7 @@ WSGI_APPLICATION = "student_portal.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.rvatvgranpwwhohqfjfi',
-        'PASSWORD': '#N6o6m6a6a6n6',
-        'HOST': 'aws-1-ap-south-1.pooler.supabase.com',
-        'PORT': '6543',
-    }
-}
+
 
 DATABASES = {
     "default": {
