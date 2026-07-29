@@ -1815,3 +1815,545 @@ section{
 
 }
 
+/*==================================================
+            RESPONSIVE DESIGN
+==================================================*/
+
+
+/*==================================================
+            TABLET & BELOW
+==================================================*/
+
+@media (max-width: 991.98px) {
+
+    /* NAVBAR */
+
+    .dashboard-navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.45rem;
+    }
+
+    .dashboard-navbar .navbar-collapse {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .dashboard-navbar .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .dashboard-navbar .nav-link {
+        margin: 3px 0;
+        padding: 12px 15px !important;
+    }
+
+    .profile-link {
+        margin-left: 0 !important;
+    }
+
+    .dropdown-menu {
+        margin-top: 5px !important;
+        box-shadow: none;
+        border: 1px solid var(--border);
+    }
+
+
+    /* HERO */
+
+    .dashboard-hero {
+        min-height: auto;
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dashboard-hero-card {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+
+    /* PROFILE */
+
+    .profile-card {
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .profile-details {
+        gap: 20px;
+    }
+
+
+    /* HELP */
+
+    .help-card {
+        padding: 35px;
+        gap: 25px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-links {
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/*==================================================
+            TABLET
+==================================================*/
+
+@media (max-width: 767.98px) {
+
+    /* GLOBAL SECTIONS */
+
+    section {
+        padding: 75px 0;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* HERO */
+
+    .dashboard-hero {
+        padding-top: 110px;
+        padding-bottom: 70px;
+    }
+
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .dashboard-main-btn {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+
+    /* HERO CARD */
+
+    .dashboard-hero-card {
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+
+    .hero-card-icon {
+        width: 75px;
+        height: 75px;
+        font-size: 30px;
+    }
+
+    .dashboard-hero-card h3 {
+        font-size: 22px;
+    }
+
+
+    /* SECTION HEADING */
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+
+
+    /* PROFILE CARD */
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 25px;
+        gap: 25px;
+    }
+
+    .profile-avatar {
+        width: 95px;
+        min-width: 95px;
+        height: 95px;
+        font-size: 36px;
+    }
+
+    .profile-details {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .profile-item {
+        text-align: left;
+    }
+
+
+    /* STEP CARDS */
+
+    .step-card {
+        padding: 35px 25px;
+    }
+
+
+    /* QUICK CARDS */
+
+    .quick-card {
+        padding: 30px 25px;
+    }
+
+
+    /* HELP CARD */
+
+    .help-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+
+    .help-icon {
+        min-width: 65px;
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+    .help-content h2 {
+        font-size: 22px;
+    }
+
+    .help-content p {
+        font-size: 14px;
+    }
+
+    .help-action {
+        width: 100%;
+    }
+
+    .help-btn {
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .dashboard-footer {
+        padding: 50px 0 25px;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+}
+
+
+/*==================================================
+            MOBILE
+==================================================*/
+
+@media (max-width: 575.98px) {
+
+    /* NAVBAR */
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .navbar-toggler {
+        padding: 6px 9px;
+        border-radius: 8px;
+    }
+
+
+    /* HERO */
+
+    .dashboard-hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.15rem;
+        line-height: 1.25;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .welcome-badge {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .dashboard-main-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+
+    /* DECORATIVE CIRCLES */
+
+    .dashboard-hero::before {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+    }
+
+    .dashboard-hero::after {
+        width: 300px;
+        height: 300px;
+        right: -150px;
+        bottom: -150px;
+    }
+
+
+    /* HERO CARD */
+
+    .dashboard-hero-card {
+        padding: 30px 20px;
+    }
+
+    .dashboard-hero-card h3 {
+        font-size: 21px;
+    }
+
+    .dashboard-hero-card p {
+        font-size: 14px;
+    }
+
+
+    /* SECTION */
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading span {
+        font-size: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* PROFILE */
+
+    .profile-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .profile-avatar {
+        width: 85px;
+        min-width: 85px;
+        height: 85px;
+        font-size: 32px;
+    }
+
+    .profile-item strong {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+
+    /* STEP CARD */
+
+    .step-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .step-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 27px;
+    }
+
+    .step-card h3 {
+        font-size: 19px;
+    }
+
+    .step-card p {
+        font-size: 13px;
+    }
+
+
+    /* QUICK CARD */
+
+    .quick-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .quick-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 23px;
+    }
+
+    .quick-card h3 {
+        font-size: 19px;
+    }
+
+    .quick-card p {
+        font-size: 13px;
+    }
+
+
+    /* HELP */
+
+    .dashboard-help-section {
+        padding: 60px 0;
+    }
+
+    .help-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .help-content h2 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .help-content p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* FOOTER */
+
+    .footer-brand h3 {
+        font-size: 20px;
+    }
+
+    .footer-brand p {
+        font-size: 13px;
+    }
+
+    .footer-links {
+        gap: 10px 18px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+
+    /* BACK TO TOP */
+
+    .dashboard-back-top {
+        width: 40px;
+        height: 40px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+
+
+/*==================================================
+            VERY SMALL DEVICES
+==================================================*/
+
+@media (max-width: 360px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .dashboard-main-btn {
+        font-size: 13px;
+    }
+
+}
+
