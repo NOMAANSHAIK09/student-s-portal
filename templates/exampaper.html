@@ -702,7 +702,7 @@ Computer Networks
 <!-- =======================================
             SEARCH RESULTS
 ======================================== -->
-<section class="search-results">
+<section class="search-results latest-paper">
 
 {% if request.GET.subject or request.GET.branch or request.GET.semester or request.GET.year %}
 <div class="container">
@@ -797,7 +797,9 @@ Preview
 </div>
 </div>
 
-</section>
+<!-- </section> -->
+<!-- </section> -->
+</br>
 
 
 
@@ -806,7 +808,7 @@ Preview
             LATEST PAPERS
 ======================================== -->
 
-<section class="latest-paper">
+<!-- <section class="latest-paper"> -->
 
 <div class="container">
 
@@ -840,6 +842,8 @@ Download the latest uploaded examination papers.
 
 <!-- CARD 1 -->
 {% for paper in latest_papers %}
+
+
 <div class="col-lg-4">
 
 <div class="paper-card">

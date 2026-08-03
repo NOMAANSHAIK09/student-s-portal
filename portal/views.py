@@ -123,7 +123,13 @@ def exampaper(request):
         )
 
     # Latest uploads
-    latest_papers = QuestionPaper.objects.all().order_by('-id')[:6]
+    latest_papers = QuestionPaper.objects.all().order_by('-id')[:3]
+    # if latest_papers < 3:
+    #     latest_papers = QuestionPaper.objects.all().order_by('-id')[:latest_papers]
+    # else:
+    #     latest_papers = QuestionPaper.objects.all().order_by('-id')[:3]
+    
+    
 
     return render(request, 'exampaper.html', {
         'papers': papers,
