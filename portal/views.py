@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.hashers import make_password, check_password
 from django.http import HttpResponse
-
+from django.core.paginator import Paginator
 from .models import UserInfo, QuestionPaper
 # Create your views here.
 # from django.http import HttpResponse
@@ -123,11 +123,11 @@ def exampaper(request):
         )
 
     # Latest uploads
-    latest_papers = QuestionPaper.objects.all().order_by('-id')[:3]
-    # if latest_papers < 3:
-    #     latest_papers = QuestionPaper.objects.all().order_by('-id')[:latest_papers]
-    # else:
-    #     latest_papers = QuestionPaper.objects.all().order_by('-id')[:3]
+    # latest_papers = QuestionPaper.objects.all().order_by('-id')[:3]
+    queryset = QuestionPaper.objects.all().order_by('-id')
+    paginator= Paginator(queryset, 3)
+    page_1=paginator.get_page(1)
+    latest_papers = page_1.object_list
     
     
 
